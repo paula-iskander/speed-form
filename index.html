@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form</title>
+    <link rel="icon" type="image/x-icon" href="/imgs/Logo.ico">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <script src="https://kit.fontawesome.com/224a5660d9.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <nav class="navbar sticky-top bg-body-tertiary border-bottom">
+        <div class="container">
+          <a class="navbar-brand" href="#">
+            <img src="./Imgs/bosch.svg" alt="Bootstrap" height="30">
+          </a>
+        </div>
+      </nav>
+    <!-- <div class="container d-flex justify-content-center mx-auto ">
+        <div class="w-75 my-5 bg-light rounded-3">
+            <form class="m-5">
+                <div class="mb-3">
+                  <label for="exampleInputEmail1" class="form-label">Email address</label>
+                  <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                  <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+                </div>
+                <div class="mb-3">
+                  <label for="exampleInputPassword1" class="form-label">Password</label>
+                  <input type="password" class="form-control" id="exampleInputPassword1">
+                </div>
+                <div class="mb-3 form-check">
+                  <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                  <label class="form-check-label" for="exampleCheck1">Check me out</label>
+                </div>
+                <button type="submit" class="btn btn-primary">Submit</button>
+              </form>
+        </div>
+    </div> -->
+
+    <div class="container-fluid px-1 py-5 mx-auto">
+        <div class="row d-flex justify-content-center">
+            <div class="col-xl-7 col-lg-8 col-md-9 col-11 text-center">
+                <h3>PLACEHOLDER</h3>
+                <p class="blue-text">placeholder placeholder placeholder placeholder placeholder placeholder</p>
+                <div class="card">
+                    <h5 class="text-center mb-4">Powering world-class companies</h5>
+                    <form class="form-card" onsubmit="event.preventDefault()" method="post" action="./form-data">
+                        <div class="row justify-content-between text-left">
+                            <div class="form-group col-sm-6 flex-column d-flex"> 
+                                <label class="form-control-label px-3">First name<span class="text-danger"> *</span></label> 
+                                <input type="text" id="fname" name="fname" placeholder="Enter your first name" onblur="validate(1)" required>
+                            </div>
+                            <div class="form-group col-sm-6 flex-column d-flex"> <label class="form-control-label px-3">Last name<span class="text-danger"> *</span></label> <input type="text" id="lname" name="lname" placeholder="Enter your last name" onblur="validate(2)" required> </div>
+                        </div>
+                        <div class="row justify-content-between text-left">
+                            <div class="form-group col-sm-6 flex-column d-flex"> <label class="form-control-label px-3">Email Address <span class="text-danger"> *</span></label>
+                                 <input type="email" id="email" name="email" placeholder="" onblur="validate(3)" required> 
+                            </div>
+                            <div class="form-group col-sm-6 flex-column d-flex"> <label class="form-control-label px-3">Phone number<span class="text-danger"> *</span></label> <input type="text" id="mob" name="mob" placeholder="" onblur="validate(4)" required> </div>
+                        </div>
+                        <!-- <div class="row justify-content-between text-left">
+                            <div class="form-group col-sm-6 flex-column d-flex"> <label class="form-control-label px-3">Job title<span class="text-danger"> *</span></label> <input type="text" id="job" name="job" placeholder="" onblur="validate(5)"> </div>
+                        </div> -->
+                        <div class="row justify-content-end  my-3 ">
+                            <p id="msg" ></p>
+                            <div class="form-group col-sm-12 "> <button id="submit" type="submit" class="btn-block btn-primary">Submit</button> </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        // Get references to your input fields and the submit button
+        const fnameInput = document.getElementById("fname");
+        const lnameInput = document.getElementById("lname");
+        const emailInput = document.getElementById("email");
+        const mobInput = document.getElementById("mob");
+        const submitButton = document.getElementById("submit");
+
+        // Function to check if all fields are filled and enable/disable the button
+        function checkInputs() {
+            if (
+                fnameInput.value.trim() !== "" &&
+                lnameInput.value.trim() !== "" &&
+                emailInput.value.trim() !== "" &&
+                mobInput.value.trim() !== ""
+            ) {
+                submitButton.removeAttribute("disabled");
+            } else {
+                submitButton.setAttribute("disabled", "true");
+            }
+        }
+
+        // Add event listeners to the input fields
+        fnameInput.addEventListener("input", checkInputs);
+        lnameInput.addEventListener("input", checkInputs);
+        emailInput.addEventListener("input", checkInputs);
+        mobInput.addEventListener("input", checkInputs);
+
+        // Initially, the button should be disabled
+        checkInputs();
+
+    </script>
+    <script src="js/bootstrap.bundle.js"></script> 
+    <script src="/js/script.js"></script>
+</body>
+</html>
